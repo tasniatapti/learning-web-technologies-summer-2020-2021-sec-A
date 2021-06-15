@@ -1,11 +1,11 @@
 <?php
 	
-	$degree = "";
+	$Blood Group = "";
 	
 	if(isset($_REQUEST['submit'])){
 		
-		$degree = $_REQUEST['degree'];
-		if($degree == ""){
+		$Blood Group = $_REQUEST['Blood Group'];
+		if($Blood Group == ""){
 			echo "invalid!";
 		}
 	}else{
@@ -21,7 +21,7 @@
 <body>
 	<form method="REQUEST" action="#" >
 
-		Gender: <input type="text" name="degree" value="" />
+		Gender: <input type="text" name="Blood Group" value="" />
 				<input type="submit" name="submit" value="Submit">
 	</form>
 </body>
