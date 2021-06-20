@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<?php
+	session_start();
+	if(isset($_SESSION['flag'])){
+?>
+<html>
+<head>
+	<title>Dashboard</title>
+</head>
+<body>
+<table border="1" width="100%" >
+	<tr >
+	<td > picture </td>
+	<td  align="right">
+	<a href="login.html">Logged in as </a> |<a href="../controller/logout.php">Logout</a>
+	</td>
+	</tr>
+	<tr style="height:50px;">
+	<td> 
+	<h4> <ul> Account </ul> </h4> <br>
+	
+		<li>
+		 <a href="Dashboard.html">Dashboard </a> <br/>
+		 <a href="profile.html">View Profile </a> <br/>
+		 <a href="edit.html">Edit Profile </a> <br/>
+		 <a href="changeprofile.html">Change Profile Picture </a> <br/>
+		 <a href="changepass.html">Change Password </a> <br/>
+		 <a href="logout.php">LogOut </a>
+	</li>
+	</ul>
+	</td>
+	<td>
+	<h1>Welcome  <?=$_SESSION['user']['username']?> </h1>
+	</td>
+	</tr>
+	<tr >
+	<td colspan="2" align="center">
+	 copyrite@17
+	</td>
+</tr>
+</table>
+</body>
+</html>
+<?php
+	
+	}else{
+		header('location: login.html');
+	}
+?>

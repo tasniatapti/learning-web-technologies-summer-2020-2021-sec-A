@@ -9,7 +9,7 @@
 		if($username != '' && $password != ''){
 			if($_SESSION['user']['username'] == $username && $_SESSION['user']['password'] == $password){
 					$_SESSION['flag'] = 'true';
-					header('location: ../view/dashboard.php');
+					header('location: ../index.html');
 			}else{
 				echo 'invlaid username/password';
 			}

@@ -6,20 +6,29 @@
 		$name= $_POST['name'];
 		$username= $_POST['username'];
 		$password= $_POST['password'];
-		$confirm_password= $_POST['confirm_password'];
+		$confirmpassword= $_POST['confirmpassword'];
 		$email= $_POST['email'];
 		$gender= $_POST['Gender'];
 		$dob= $_POST['dob'];
 		$type= $_POST['type'];
 
 		if($name != '' && $username != '' && $password != '' && $confirmpassword != ''&& $email != '' && $gender !='' && $dob != '' ){
-			$user =['name'=> $name,'username'=> $username, 'password'=>$password,'confirm_password'=>$confirm_password, 'email'=>$email, 'gender'=>$gender,'dob'=>$dob,'type'=>$type];
+			$user =['name'=> $name,'username'=> $username, 'password'=>$password,'confirmpassword'=>$confirmpassword, 'email'=>$email, 'gender'=>$gender,'dob'=>$dob,'type'=>$type];
 			$_SESSION['user'] = $user;
-			header('location: ../view/login.php');
+			header('location: ../index.html');
 		}else{
 			echo "null value found...";
 		}
-	}else{
+		else
+        {
+            if($password == $confirmpassword)
+            {
+                $_SESSION['username'] = $username;
+                $_SESSION['password'] = $password;
+
+                //echo "Success...";
+                header('location: index.html');
+            }
 		echo "invalid request...";
 	}
 

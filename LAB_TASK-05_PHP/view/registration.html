@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Page</title>
+</head>
+<body>
+<table border="1" width="100%" >
+	<tr>
+	<td > picture </td>
+	<td align="right">
+	<a href="login.html">Login</a> |<a href="registration.html">Registration</a>|<a href="../index.html">Home</a>
+	</td>
+	<tr style="height:200px;">
+	<td align="center" colspan="2">
+	
+
+		<form method="post" action="../controller/loginCheck.php">
+			<fieldset style="width:100px;">
+	<form method="post" action="../controller/registrationCheck.php">
+		<fieldset>
+			<legend>Registration</legend>
+			<table>
+			<tr>
+					<td>Name</td>
+					<td><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td>Username</td>
+					<td><input type="text" name="username"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td>Confirm Password</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="email" name="email"></td>
+				</tr>
+				<tr>
+                                <td colspan="2">
+                                    <fieldset>
+                                        <legend>Gender</legend>
+                                        <input type="radio" name="gender" value="Male">Male
+                                        <input type="radio" name="gender" value="Female">Female
+                                        <input type="radio" name="gender" value="Other">Other
+                                    </fieldset>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td colspan="2">
+                                    <fieldset>
+                                        <legend>Date of Birth</legend>
+                                        <input type="date" name="dob" value="Male">
+                                    </fieldset>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td colspan="2">
+                                    <input type="submit" name="signup" value="Submit">
+                                    <input type="reset" name="reset" value="Reset">
+                                </td>
+                            </tr>
+			</table>
+		</fieldset>
+	</form>
+	<tr >
+				<td colspan="2" align="center">
+					copyritec@17
+	
+				</td>
+			</tr>
+			</table>
+
+</body>
+</html>
