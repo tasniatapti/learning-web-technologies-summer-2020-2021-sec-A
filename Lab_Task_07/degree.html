@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html>
+<head>
+
+</head>
+<script>
+function validate(){
+ var valid =false;
+ if(document.getElementById("ssc").checked){
+ valid=true;
+ }
+ 
+ else if(document.getElementById("hsc").checked){
+ valid=true;
+ }
+ else if(document.getElementById("bsc").checked){
+ valid=true;
+ }
+ if(valid){
+ alert ("validation successfull");
+ }
+ else{
+ alert ("select at least one ");
+ return false;
+ }
+}
+</script>
+	<body>
+	<fieldset>
+		<legend>Degree</legend>
+		<form name="myform" onsubmit="return validate()">
+		
+						<input type="checkbox" id="ssc" name="" value=""> SSC
+						<input type="checkbox" id="hsc" name="" value=""> HSC
+						<input type="checkbox" id="bsc"name="" value=""> BSC
+			
+			
+		</fieldset>
+		
+						
+						<input type="submit" name="submit" value="Submit">
+						</form>
+					
+	</body>
+</html>

@@ -1,7 +1,7 @@
 <html>
 <head> </head>
 <body>
-<form onsubmit="return muFun()">
+<form onsubmit="return myFun()">
 Email: <input type="text" id="Email" value="">
 <span id="Message"> </span>
 </br>
@@ -10,14 +10,31 @@ Email: <input type="text" id="Email" value="">
 
 <script>
   "use strict"
-function myFun(){
+ function myFun(){
   
- let a= document.getElementById("Email").value;
-   if(a==""){
+ let a= document.myForm.Email.value;
+	if(a==""){
    document.getElementById("Message").innerHTML="Can not empty";
+   return false;
+   }
+ 
+   if(a.indexOf('@')<=0){
+   document.getElementById("Message").innerHTML="invalid @ position";
+   return false;
+   }
+   if(a.char.At(a.length-4)!='.')
+   {
+   document.getElementById("Message").innerHTML="invalid . position at 4";
+   return false;
+   }
+   if(a.char.At(a.length-3)!='.')
+   {
+   document.getElementById("Message").innerHTML="invalid . position at 3";
    return false;
    }
    
      
 }
 </script>
+<body>
+<html>
