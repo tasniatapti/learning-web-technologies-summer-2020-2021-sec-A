@@ -1,0 +1,118 @@
+<html>   
+   <head>
+      <title>Form Validation</title>      
+      <script type = "text/javascript">
+         function validate() {
+      
+         if( document.myForm.Name.value == "" ) {
+            alert( "Please provide your name!" );
+            document.myForm.Name.focus() ;
+            return false;
+         }
+         if( document.myForm.EMail.value == "" ) {
+            alert( "Please provide your Email!" );
+            document.myForm.EMail.focus() ;
+            return false;
+         }
+		 if (document.getElementById("male").checked || document.getElementById("female").checked || document.getElementById("other").checked) {
+            return true;
+        } else {
+            alert("At least one of them has to be selected");
+            return false;
+        }
+		if (document.getElementById("dd").value == "" || document.getElementById("mm").value == "" || document.getElementById("yyyy").value == "") {
+            alert("Cannot be empty");
+            return false;
+        } else if (document.getElementById("dd").value <= 0 || document.getElementById("dd").value > 31) {
+            alert("Must be a valid Date");
+            return false;
+        } else if (document.getElementById("mm").value <= 0 || document.getElementById("mm").value > 12) {
+            alert("Must be a valid Month");
+            return false;
+        } else if (document.getElementById("yyyy").value < 1900 || document.getElementById("yyyy").value > 2016) {
+            alert("Must be a valid year");
+            return false;
+        }
+		if (document.getElementById("blood").value!="" ) {
+            return true;
+        } else {
+            alert("At least one of them has to be selected");
+            return false;
+        }
+      </script>      
+   </head>
+   
+   <body>
+   <fieldset>
+        <legend>Person Profile </legend>
+      <form action = "" name = "myForm" onsubmit = "return(validate());">
+         <table cellspacing = "2" cellpadding = "2" border = "1">
+            
+            <tr>
+               <td align = "right">Name</td>
+               <td><input type = "text" name = "Name" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "right">EMail</td>
+               <td><input type = "text" name = "EMail" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "right">Gender</td>
+               <td>
+			   <input type="radio" value="Male" name="genderinput">Male
+                <input type="radio" value="female" name="genderinput">Female
+                <input type="radio" value="others" name="genderinput">others
+			   </td>
+            </tr>
+            
+            <tr>
+               <td align = "right">Date of Birth</td>
+               <td>
+                  dd mm yyyy <br>
+            <input type="text" name="dd" id="dd"> / <input type="text" name="mm" id="mm"> / <input type="text" name="yyyy" id="yyyy">
+            <br>
+               </td>
+            </tr>
+			<tr>
+               <td align = "right">Blood Group</td>
+               <td>
+			   <select name="blood" id="blood">
+                        <option value=""></option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option> 
+						</select>
+			   </td>
+            </tr>
+			
+			<tr>
+               <td align = "right">Degree</td>
+               <td>
+			   <input type="checkbox" name="ssc" id="ssc"> SSC
+              <input type="checkbox" name="hsc" id="hsc"> HSC
+               <input type="checkbox" name="bsc" id="bsc"> BSc
+			   </td>
+            </tr>
+			<tr>
+               <td align = "right">Picture</td>
+               User Id <input type="text" name="id" id="id"> <br> Picture <input type="file" name="pic" id="pic">
+            </tr>
+			
+            
+            <tr>
+               <td align = "right"></td>
+               <td><input type = "submit" value = "Submit" /></td>
+            </tr>
+            
+         </table>
+      </form>
+      </fieldset>      
+   </body>
+</html>
