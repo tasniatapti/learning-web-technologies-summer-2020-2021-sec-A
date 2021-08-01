@@ -18,7 +18,7 @@ CREATE TABLE 'user' (
 
 
 
-INSERT INTO 'user' ('name', 'email', 'password', 'confirm_pass',type 'id') VALUES
+INSERT INTO 'user' ('name', 'email', 'password', 'confirm_pass','type' 'id') VALUES
 ('X', '15', '15', 1, 1);
 
 
