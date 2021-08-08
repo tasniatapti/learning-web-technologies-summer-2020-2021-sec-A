@@ -3,9 +3,9 @@
 require_once('db.php');
 
 
-function insertemployer($employerinfo){
+function insertemployer($jobinfo){
 	$conn = getConnection();
-	$sql = "insert into employerinfo values('', '{$employerinfo['employername']}', '{$employerinfo['companyname']}', '{$employerinfo['contactno']}', '{$employerinfo['username']}','{$employerinfo['password']}')";
+	$sql = "insert into jobinfo values('', '{$jobinfo['jobtitle']}', '{$jobinfo['companyname']}', '{$jobinfo['location']}', '{$jobinfo['salary']}')";
 
 	$result = mysqli_query($conn, $sql);
 
@@ -17,7 +17,7 @@ function insertemployer($employerinfo){
 
 }
 
-function getemployerinfobyId($id){
+function getjobinfobyId($id){
 	
 	$conn = getConnection();
 	$sql = "select * from employerinfo where id='{$id}";
@@ -30,18 +30,18 @@ function getemployerinfobyId($id){
 function getAllemployerinfo(){
 
 	$conn = getConnection();
-	$sql = "select * from employerinfo";
+	$sql = "select * from jobinfo";
 	$result = mysqli_query($conn, $sql);
 	$products = [];
 	while ($row = mysqli_fetch_assoc($result)) {
-		array_push($employerinfo, $row);
+		array_push($jobinfo, $row);
 	}
 	return $employerinfo;
 }
 
-function updateemployerinfo($employerinfo){
+function updatejobinfo($jobinfo){
 	$conn = getConnection();
-	$sql = "update employerinfo set employername='{$employerinfo['employername']}', companyname='{$employerinfo['companyname']}', contactno='{$product['contactno']}'";
+	$sql = "update jobinfo set info='{ companyname='{$jobinfo['companyname']}', contactno='{$jobinfo['contactno']}'";
 	$result = mysqli_query($conn, $sql);
 	
 	if($result){
@@ -51,24 +51,6 @@ function updateemployerinfo($employerinfo){
 	}
 }
 
-function delete($id){
-	$conn = getConnection();
-	$sql = "deleteemployerinfo from employerinfo where id='{$id}";
-	$result = mysqli_query($conn, $sql);
-	
-	if($result){
-		return true;
-	}else{
-		return false;
-	}
-}
 
-function getemployeeByName($employername){
-	$conn = getConnection();
-	$sql = "select * from employerinfo where employername='{$employername}";
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
-	return $row;
-}
 
 ?>
