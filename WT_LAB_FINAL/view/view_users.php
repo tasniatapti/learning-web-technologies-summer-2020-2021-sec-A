@@ -1,7 +1,7 @@
 <?php
 	$title="View employerinfo";
 	include 'header.php';
-	require_once('../model/employeModel.php');
+	require_once('../model/adminModel.php');
 	employerinfo = getAllEmploye();
 ?>
 
